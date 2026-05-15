@@ -262,7 +262,7 @@ function App() {
       const resp = await fetch("https://toto-proxy.onrender.com/ai", {
         method:"POST",
         headers:{ "Content-Type":"application/json" },
-        body:JSON.stringify({ model:"claude-sonnet-4-20250514", max_tokens:200, messages:[{role:"user",content}] }),
+        body:JSON.stringify({ model:"claude-sonnet-4-5", max_tokens:200, messages:[{role:"user",content}] }),
       });
       const d = await resp.json();
       if (!resp.ok) { setAiTxt("API kļūda: "+(d.error?.message||resp.status)); setAiLoad(false); return; }
